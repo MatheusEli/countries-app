@@ -1,0 +1,7 @@
+<input type="text" (input)="onSearchCountry($event)">
+<ul *ngIf="(countries$ | async) as countries">
+    <li *ngFor="let country of countries">
+        <p>{{country.name}}</p>
+        <img style="width: 300px;" src="{{country.flag}}" alt="{{country.name}} flag">
+    </li>
+</ul>

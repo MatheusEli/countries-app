@@ -1,4 +1,4 @@
-<input type="text" (input)="onSearchCountry($event)">
+<input type="text" #countrySearchInput />
 <ul *ngIf="(countries$ | async) as countries">
     <li *ngFor="let country of countries">
         <p>{{country.name}}</p>

@@ -12,11 +12,11 @@ export class CardsListComponent implements OnInit{
     @ViewChild('countrySearchInput', { static: true }) countrySearchInput: ElementRef;
     countries$: Observable<Country[]>;
 
-    constructor(private cardService: CardsService) {}
+    constructor(private cardService: CardsService) {
+        this.fetchCountries();
+    }
 
     ngOnInit(): void {
-        this.fetchCountries();
-
         fromEvent(this.countrySearchInput.nativeElement, 'keyup').pipe(
             map((event: any) => {
                 return event.target.value
